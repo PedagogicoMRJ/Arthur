@@ -17,7 +17,7 @@ public class Controller : MonoBehaviour
     public GameObject crossHair;
     void Start()
     {
-      reloadTime = 3.0f;
+      reloadTime = 2.0f;
       bulletParameters = GetComponentInChildren<Bullet>();
       bodyRig = GetComponent<Rigidbody2D>();
       anim = GetComponentInChildren<Animator>();
@@ -70,10 +70,10 @@ public class Controller : MonoBehaviour
         anim.SetFloat("AimHorizontal", aimDirection.x);
         anim.SetFloat("AimVertical", aimDirection.y);
         crossHair.transform.position = aim;
-        if (Input.GetMouseButtonDown(0) && reloadTime>=3)
+        if (Input.GetMouseButtonDown(0) && reloadTime >= 3)
         {
             reloadTime = 0.0f;
-            bulletParameters.fireBullet (aimDirection, aim);
+            bulletParameters.fireBullet(aimDirection, aim);
         }
     }
 }

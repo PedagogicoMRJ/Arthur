@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+using Unity.Burst.Intrinsics;
+using Unity.VisualScripting;
 
 public class EnemyHandler : MonoBehaviour
 {
@@ -17,7 +20,7 @@ public class EnemyHandler : MonoBehaviour
     public float enemySpeed;
     Rigidbody2D enemyRig;
     Vector2 targetDir;
-    private void Start()
+    void Start()
     {
         bulletParameters = GetComponentInChildren<Bullet>();
         randomNum = new Vector2((int)Mathf.Round(Random.Range(-1.0f, 1.0f)), (int)Mathf.Round(Random.Range(-1.0f, 1.0f)));
@@ -26,7 +29,7 @@ public class EnemyHandler : MonoBehaviour
         randomPos = new Vector2(this.transform.position.x + randomNum.x, this.transform.position.y + randomNum.y);
         enemyRig = this.GetComponent<Rigidbody2D>();
     }
-    private void Update()
+    void Update()
     {
         walkTime += Time.deltaTime;
         targetDir = playerPos.position - this.transform.position;
@@ -48,7 +51,7 @@ public class EnemyHandler : MonoBehaviour
             Follow();
         }
     }
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")
         {
@@ -56,13 +59,6 @@ public class EnemyHandler : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
-    /*private void OnTriggerEnter2D (Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            SceneManager.LoadScene("Menu");
-        }
-    }*/
     void Follow()
     {
         if(enemyRig.velocity.magnitude <= 5.0f)
