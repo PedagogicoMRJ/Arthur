@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2324686734376060310}
   m_Layer: 6
   m_Name: Skull
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,4 +138,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasWalkAnim: 0
   hasRandomWalk: 0
-  enemySpeed: 3
+  enemySpeed: 0.03

@@ -2770,9 +2770,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136948489}
     m_Modifications:
+    - target: {fileID: -2324686734376060310, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
+      propertyPath: enemySpeed
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_Name
       value: Skull (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6922162268786925298, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_GravityScale
@@ -4628,6 +4636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skull (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6922162268786925298, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_GravityScale
       value: 0
@@ -6237,6 +6249,10 @@ PrefabInstance:
     - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_Name
       value: Skull (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6922162268786925298, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_GravityScale
@@ -12370,9 +12386,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136948489}
     m_Modifications:
+    - target: {fileID: -2324686734376060310, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
+      propertyPath: enemySpeed
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_Name
       value: Skull
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6922162268786925298, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_GravityScale
