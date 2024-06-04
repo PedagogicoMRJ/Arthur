@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
   public float followSpeed = 2;
-  Transform targetPos;
+  public Transform targetPos;
   Vector3 playerPos;
   void Start()
   {
