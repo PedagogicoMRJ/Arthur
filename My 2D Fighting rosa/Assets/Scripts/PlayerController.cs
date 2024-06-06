@@ -22,44 +22,44 @@ public class PlayerController: MonoBehaviour
     {
        if (isKnockback)
        {
-        anim.SetBool("Knockback", false);
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
-        {
-            isKnockback = false;
-        }
+            anim.SetBool("Knockback", false);
+            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+            {
+                isKnockback = false;
+            }
        }
        if (isAttack)
-     {
-       if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
-       {
-        isAttack = false;
-       }
-     }
+        {
+            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+            {
+                isAttack = false;
+            }
+        }
     }
     void Update()
     {
         if (!isAttack && !isKnockback)
         {
-        Movement();
-        Attack();
-        }
-        if(!isAttack)
-        {
             Movement();
             Attack();
         }
+        /*if(!isAttack)                   era apenas para ser atualizado
+        {
+            Movement();
+            Attack();
+        }*/
     }
     void Movement()
     {
         if (isPlayer1)
         {
-            move = Input.GetAxis("Horizontal1");
+            move = Input.GetAxis("Horizontal");
         }
         else
         {
             move = Input.GetAxis("Horizontal2");
         }
-        move = Input.GetAxis("Horizontal");
+        //move = Input.GetAxis("Horizontal");
         rig.velocity = new Vector2(move * speed, 0.0f);
         anim.SetFloat("Walk", move);
     }
