@@ -1,4 +1,4 @@
-1using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +20,7 @@ public class Chest : MonoBehaviour, IInteractable
  {
     if (Input.GetKeyDown(KeyCode.E) && onRadious)
     {
-        chestAnim.SetBool("Open", true);
+        chestAnim.SetBool("ChestOpening", true);
     }
  }
  public void Interact()
