@@ -16,8 +16,9 @@ public class Dialogue : MonoBehaviour, IInteractable
  }
 private void FixedUpdate()
 {
-   if (Input.GetKeyDown(KeyCode.E) && onRadious)
+   if (Input.GetKeyDown(KeyCode.E) || onRadious)
    {
+      Interact();
       dm.Speech(nameText, speechText);
    }
 }
