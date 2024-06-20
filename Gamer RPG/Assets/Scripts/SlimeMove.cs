@@ -19,6 +19,7 @@ void Update(){
 }
 void Movement()
 {
+  int i=Random.Range(0,5);
   movement.x = Input.GetAxis("Horizontal");
   movement.y = Input.GetAxis("Vertical");
   if(movement.x != 0 && movement.y != 0)

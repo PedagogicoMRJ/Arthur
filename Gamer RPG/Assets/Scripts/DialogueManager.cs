@@ -7,15 +7,18 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public GameObject dialogObj;
+    public GameObject dialog;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI speechText;
     public float typingSpeed;
     private string[] sentences;
     private int index;
+    public void Start(){
+        
+    }
     public void Speech(string nametxt, string[] speechtxt)
     {
-        dialogObj.SetActive(true);
+        dialog.SetActive(true);
         nameText.text = nametxt;
         sentences = speechtxt;
         StartCoroutine(TypeSentence());
@@ -35,15 +38,19 @@ public class DialogueManager : MonoBehaviour
             if (index < sentences.Length - 1)
             {
                 index++;
-                speechText.text = "";
+                speechText.text = "Iae Bro";
                 StartCoroutine(TypeSentence());           
             }
             else
             {
-                speechText.text = "";
+                speechText.text = "Como c tá";
                 index = 0;
-                dialogObj.SetActive(false);
+                dialog.SetActive(false);
             }
         }
+    }
+    public void Destrui(){
+        dialog.SetActive(false);
+        Destroy(this.dialog);
     }
 }

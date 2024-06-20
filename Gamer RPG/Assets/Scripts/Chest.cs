@@ -18,7 +18,7 @@ public class Chest : MonoBehaviour, IInteractable
  }
  private void Update()
  {
-    if (Input.GetKeyDown(KeyCode.E) && onRadious)
+    if (Input.GetKeyDown(KeyCode.C) && onRadious)
     {
         chestAnim.SetBool("ChestOpening", true);
     }
