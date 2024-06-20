@@ -16,17 +16,13 @@ public class Dialogue : MonoBehaviour, IInteractable
  }
 private void FixedUpdate()
 {
-   if (Input.GetKeyDown(KeyCode.E) || onRadious)
-   {
-      Interact();
-      dm.Speech(nameText, speechText);
-   }
+   Interact();
 }
-private void Update()
+void Update()
  {
-    if (Input.GetKeyDown(KeyCode.E) && onRadious)
+    if (Input.GetKeyDown(KeyCode.E) || onRadious)
     {
-        dm.Speech(nameText, speechText);
+      dm.Speech(nameText, speechText);
     }
  }
  public void Interact()
