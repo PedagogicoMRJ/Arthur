@@ -65,7 +65,7 @@ public class PlayerController: MonoBehaviour
     }
     void Attack()
     {
-        if (isPlayer1)
+        if(isPlayer1)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
