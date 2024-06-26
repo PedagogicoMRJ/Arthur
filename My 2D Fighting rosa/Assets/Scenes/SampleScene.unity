@@ -571,8 +571,8 @@ GameObject:
   - component: {fileID: 862514576}
   - component: {fileID: 862514575}
   - component: {fileID: 862514574}
-  - component: {fileID: 862514578}
   - component: {fileID: 862514579}
+  - component: {fileID: 862514580}
   m_Layer: 0
   m_Name: Lutador1
   m_TagString: Untagged
@@ -695,20 +695,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &862514578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862514573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eac7a854b1aadc41926553c3993ce5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayer1: 0
-  speed: 10
 --- !u!50 &862514579
 Rigidbody2D:
   serializedVersion: 4
@@ -730,6 +716,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &862514580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862514573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eac7a854b1aadc41926553c3993ce5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer1: 0
+  speed: 10
 --- !u!1 &1099388196
 GameObject:
   m_ObjectHideFlags: 0
