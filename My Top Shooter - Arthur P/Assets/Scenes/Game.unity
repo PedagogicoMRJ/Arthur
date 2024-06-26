@@ -2770,9 +2770,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136948489}
     m_Modifications:
+    - target: {fileID: -2324686734376060310, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
+      propertyPath: enemySpeed
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_Name
       value: Skull (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6922162268786925298, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_GravityScale
@@ -4628,6 +4636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skull (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6922162268786925298, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_GravityScale
       value: 0
@@ -6237,6 +6249,10 @@ PrefabInstance:
     - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_Name
       value: Skull (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6922162268786925298, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_GravityScale
@@ -8382,7 +8398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!58 &1413223921
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8478,7 +8494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f309bc8d444d64c8ed61c740f2ab81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleport: {fileID: 0}
+  teleport: {fileID: 1413223924}
   enemiesDied: 0
   enemiesKilled: 0
   prefabs: []
@@ -11149,7 +11165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924011852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.251, y: 0.417, z: 0}
+  m_LocalPosition: {x: -0.065, y: 0.177, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11232,7 +11248,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -689868993, guid: 0dab4f57972f90240b1ded1919052041, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11240,7 +11256,7 @@ SpriteRenderer:
   m_Size: {x: 0.19, y: 0.17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1947631245
@@ -12370,9 +12386,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136948489}
     m_Modifications:
+    - target: {fileID: -2324686734376060310, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
+      propertyPath: enemySpeed
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_Name
       value: Skull
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326065897187676384, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6922162268786925298, guid: 94d2a4bfa86bee64eb8948389f3613f2, type: 3}
       propertyPath: m_GravityScale
