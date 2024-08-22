@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class EnemyHandler : MonoBehaviour, IInteractable
 {
-    public bool isBoss;
+    //public bool isBoss;
     public bool isEnemyDead;
-    public bool isArmored = false;
+    //public bool isArmored = false;
     public string enemyName;
     public int enemyLevel;
-    public int enemyHeal;
+    //public int enemyHeal;
     public int enemyHealth;
     public int enemyMaxHealth;
     public int enemyDamage;
-    public int enemyArmor;
+    //public int enemyArmor;
     private Animator enemyAnim;
-    public int enemyExperience;
+    //public int enemyExperience;
     void Start()
     {
         isEnemyDead = false;
@@ -24,21 +24,21 @@ public class EnemyHandler : MonoBehaviour, IInteractable
     public bool TakeDamage(int damage)
     {
         Debug.Log("The enemy take damage");
-        damage -= enemyArmor;
+        //damage -= enemyArmor;
         enemyHealth -= damage;
-        if (isArmored)
+        /*if (isArmored)
         {
             enemyArmor -= 10;
             isArmored = false;
             Debug.Log("The Armor was Broken");
-        }
+        }*/
         if (enemyHealth <= 0)
         {
             EnemyDie();
             return true;
         }
         else
-        return false;
+            return false;
     } 
     void EnemyDie()
     {
@@ -50,7 +50,7 @@ public class EnemyHandler : MonoBehaviour, IInteractable
         Debug.Log("The Enemy is read to fight");
         gameObject.tag = "isFighting";
     }
-    public void Heal()
+    /*public void Heal()
     {
         Debug.Log("The Enemy increase her health");
         enemyHealth += enemyHeal;
@@ -69,5 +69,5 @@ public class EnemyHandler : MonoBehaviour, IInteractable
         {
             Heal();
         }
-    }
+    }*/
 }

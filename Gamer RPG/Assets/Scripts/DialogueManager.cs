@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
     }
     IEnumerator TypeSentence()
     {
-        foreach (char letter in sentences [index]. ToCharArray())
+        foreach (char letter in sentences[index].ToCharArray())
         {
           speechText.text += letter;
           yield return new WaitForSeconds(typingSpeed);

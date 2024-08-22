@@ -35,8 +35,8 @@ public class Chest : MonoBehaviour, IInteractable
         onRadious = false;
     }
  }
- private void OnDrawGizmosSelectted()
- {
+ private void OnDrawGizmosSelected()                                                                        //estava OnDrawGizmosSelectted
+    {
     Gizmos.DrawWireSphere(transform.position, interactRadious);
  }
 }

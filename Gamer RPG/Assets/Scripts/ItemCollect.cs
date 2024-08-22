@@ -7,7 +7,9 @@ public class ItemCollect : MonoBehaviour, IInteractable
     public Item item;
     public void Interact()
     {
-        Collect();
+        if (Input.GetKeyDown(KeyCode.E)){
+            Collect();
+        }
     }
     public void Collect()
     {
