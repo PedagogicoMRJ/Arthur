@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour
             OnItemChangedCallback.Invoke();
         }
     }
-    return true;;
+    return true;
   }
   public void Remove(Item item)
   {
