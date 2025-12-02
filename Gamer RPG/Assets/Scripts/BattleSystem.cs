@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.VisualScripting;
-public enum BattleStage { WATING, START, PLAYERTURN, ENEMYTURN, WON, LOST }
+public enum BattleStage { WATING, START, PLAYERTURN, ENEMYTURN, WON, LOST}
 public class BattleSystem : MonoBehaviour
 {
  public BattleStage stage;
@@ -11,14 +11,14 @@ public class BattleSystem : MonoBehaviour
  PlayerHandler playerUnit;
  public GameObject specialButton;
  public bool isFighting;
- public int playerDamage;
+ //public int playerDamage;
  void Awake()
  {
     isFighting = false;
     stage = BattleStage.WATING;
     battleHUD = GameObject.FindGameObjectWithTag("BattleHUD").GetComponent<BattleHUD>();
     playerUnit = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHandler>();
-    specialButton.SetActive(false);
+    //specialButton.SetActive(false);
  }
  private void Update()
  {
@@ -55,21 +55,23 @@ public class BattleSystem : MonoBehaviour
 {
     if (stage != BattleStage.PLAYERTURN)
         return;
-    StartCoroutine(PlayerAttack(playerUnit.playerDamage));
+        StartCoroutine(PlayerAttack());
+    //StartCoroutine(PlayerAttack(playerUnit.playerDamage));
 }
-private void SpecialAttackButton()
+/*private void SpecialAttackButton()
 {
     if (stage != BattleStage.PLAYERTURN)
         return;
     StartCoroutine(PlayerAttack(playerUnit.playerDamage*2));
-}
+}*/
 public void HealButton()
 {
     if (stage != BattleStage.PLAYERTURN)
         return;
-    StartCoroutine(PlayerAttack(playerUnit.playerDamage));                                   //REVISAR
+    StartCoroutine(PlayerHeal());
+    //StartCoroutine(PlayerAttack(playerUnit.playerDamage));                                   //REVISAR
 }
-IEnumerator PlayerAttack(int damage)
+IEnumerator PlayerAttack()
 {
     Debug.Log("The Player attack the Enemy");
     bool isDead = enemyUnit.TakeDamage(playerUnit.playerDamage);
@@ -88,77 +90,88 @@ IEnumerator PlayerAttack(int damage)
         StartCoroutine(EnemyTurn());
     }
  }
- IEnumerator PlayerHeal()
- {
-    bool isBoss = enemyUnit.isBoss;
-    yield return new WaitForSeconds(1f);
-    int enemyAction = 0;
-    if(isBoss)
+    /*IEnumerator PlayerHeal()
     {
-        enemyAction = Random.Range(1, 4);
-        Debug.Log(enemyAction);
-    }
-    else
+       bool isBoss = enemyUnit.isBoss;
+       yield return new WaitForSeconds(1f);
+       int enemyAction = 0;
+       if(isBoss)
+       {
+           enemyAction = Random.Range(1, 4);
+           Debug.Log(enemyAction);
+       }
+       else
+       {
+           enemyAction= 1;
+       }
+       if(enemyAction == 1)
+       {
+           bool isDead = playerUnit.TakeDamage(enemyUnit.enemyDamage);
+           yield return new WaitForSeconds(1f);
+           battleHUD.SetHP(enemyUnit.enemyHealth, playerUnit.playerHealth);
+           yield return new WaitForSeconds(1f);
+           if (isDead)
+           {
+               Debug.Log("You died");
+               stage = BattleStage.LOST;
+               StartCoroutine(EndBattle());
+           }
+           else
+           {
+               Debug.Log("Player Turn");
+               stage = BattleStage.PLAYERTURN;
+               PlayerTurn();
+           }
+       }
+       else if (enemyAction == 2)
+       {
+           Debug.Log("The Enemy heal herself");
+           enemyUnit.Heal();
+           yield return new WaitForSeconds(1f);
+           battleHUD.SetHP(enemyUnit.enemyHealth, playerUnit.playerHealth);
+           yield return new WaitForSeconds(1f);
+           Debug.Log("Player Turn");
+           stage = BattleStage.PLAYERTURN;
+           PlayerTurn();
+       }
+       else if (enemyAction == 3)
+       {
+           Debug.Log("The Enemy armor herself");
+           enemyUnit.Armor();
+           yield return new WaitForSeconds(1f);
+           battleHUD.SetHP(enemyUnit.enemyHealth, playerUnit.playerHealth);
+           yield return new WaitForSeconds(1f);
+           Debug.Log("Player Turn");
+           stage = BattleStage.PLAYERTURN;
+           PlayerTurn();
+       }
+       else
+       {
+           Debug.Log("Someting get wrong");
+           yield return new WaitForSeconds(3f);
+           StartCoroutine(EnemyTurn());
+       }
+       Debug.Log("The Player heal herself");
+       playerUnit.Heal(5);
+       yield return new WaitForSeconds(1f);
+       battleHUD.SetHP(enemyUnit.enemyHealth, playerUnit.playerHealth);
+       yield return new WaitForSeconds(1f);
+       Debug.Log("Enemy Turn");
+       stage = BattleStage.ENEMYTURN;
+       StartCoroutine(EnemyTurn());
+    }*/
+    IEnumerator PlayerHeal()
     {
-        enemyAction= 1;
-    }
-    if(enemyAction == 1)
-    {
-        bool isDead = playerUnit.TakeDamage(enemyUnit.enemyDamage);
+        Debug.Log("The Player heal herself");
+        playerUnit.Heal(5);
         yield return new WaitForSeconds(1f);
         battleHUD.SetHP(enemyUnit.enemyHealth, playerUnit.playerHealth);
         yield return new WaitForSeconds(1f);
-        if (isDead)
-        {
-            Debug.Log("You died");
-            stage = BattleStage.LOST;
-            StartCoroutine(EndBattle());
-        }
-        else
-        {
-            Debug.Log("Player Turn");
-            stage = BattleStage.PLAYERTURN;
-            PlayerTurn();
-        }
-    }
-    else if (enemyAction == 2)
-    {
-        Debug.Log("The Enemy heal herself");
-        enemyUnit.Heal();
-        yield return new WaitForSeconds(1f);
-        battleHUD.SetHP(enemyUnit.enemyHealth, playerUnit.playerHealth);
-        yield return new WaitForSeconds(1f);
-        Debug.Log("Player Turn");
-        stage = BattleStage.PLAYERTURN;
-        PlayerTurn();
-    }
-    else if (enemyAction == 3)
-    {
-        Debug.Log("The Enemy armor herself");
-        enemyUnit.Armor();
-        yield return new WaitForSeconds(1f);
-        battleHUD.SetHP(enemyUnit.enemyHealth, playerUnit.playerHealth);
-        yield return new WaitForSeconds(1f);
-        Debug.Log("Player Turn");
-        stage = BattleStage.PLAYERTURN;
-        PlayerTurn();
-    }
-    else
-    {
-        Debug.Log("Someting get wrong");
-        yield return new WaitForSeconds(3f);
+        Debug.Log("Enemy Turn");
+        stage = BattleStage.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }
-    Debug.Log("The Player heal herself");
-    playerUnit.Heal(5);
-    yield return new WaitForSeconds(1f);
-    battleHUD.SetHP(enemyUnit.enemyHealth, playerUnit.playerHealth);
-    yield return new WaitForSeconds(1f);
-    Debug.Log("Enemy Turn");
-    stage = BattleStage.ENEMYTURN;
-    StartCoroutine(EnemyTurn());
- }
-  IEnumerator EnemyTurn()
+    IEnumerator EnemyTurn()
   {
     Debug.Log("The Enemy attack the Player");
     bool isDead = playerUnit.TakeDamage(enemyUnit.enemyDamage);
@@ -185,11 +198,11 @@ IEnumerator PlayerAttack(int damage)
         Debug.Log("You Won the Battle");
         playerUnit.isFighting = false;
         isFighting = false;
-        playerUnit.GainExperience(enemyUnit.enemyExperience);
+        /*playerUnit.GainExperience(enemyUnit.enemyExperience);
         if (playerUnit.playerLevel == 10)
         {
             EnableSpecialAttack();
-        }
+        }*/
     }
     else if (stage == BattleStage.LOST)
     {
@@ -201,8 +214,8 @@ IEnumerator PlayerAttack(int damage)
     stage = BattleStage.WATING;
     battleHUD.gameObject.SetActive(false);
   }
-  void EnableSpecialAttack()
+  /*void EnableSpecialAttack()
   {
     specialButton.SetActive(true);
-  }
+  }*/
 }

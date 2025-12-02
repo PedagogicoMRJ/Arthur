@@ -5,4 +5,8 @@ using UnityEngine;
 public interface IInteractable
 {
     void Interact();
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master
